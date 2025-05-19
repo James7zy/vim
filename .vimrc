@@ -538,11 +538,12 @@ let g:Lf_Gtagslabel = 'native-pygments'
 "let g:Lf_Gtagslabel = 'native-pygments'
 "let g:Lf_GtagsSource = 1
 
-let g:Lf_ShortcutF = '<c-p>'
+"let g:Lf_ShortcutF = '<c-p>'
+let g:Lf_ShortcutF = '<leader>ff'
 let g:Lf_ShortcutB = '<c-l>'
 noremap <leader>f :LeaderfSelf<cr>
 noremap <leader>fm :LeaderfMru<cr>
-noremap <leader>ff :LeaderfFunction<cr>
+noremap <leader>fc :LeaderfFunction<cr>
 noremap <leader>fb :LeaderfBuffer<cr>
 noremap <leader>ft :LeaderfBufTag<cr>
 noremap <leader>fl :LeaderfLine<cr>
