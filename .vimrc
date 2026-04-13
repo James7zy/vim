@@ -94,6 +94,8 @@ Plug 'fholgado/minibufexpl.vim'
 Plug 'gcmt/wildfire.vim'
 Plug 'sjl/gundo.vim'
 Plug 'Yggdroot/LeaderF'
+Plug 'preservim/vim-markdown'
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'npm install'}
 Plug 'junegunn/vim-easy-align'
 Plug 'rhysd/vim-clang-format'
 Plug 'azabiong/vim-highlighter'
@@ -531,7 +533,7 @@ let g:Lf_PreviewResult = {
 let g:Lf_GtagsAutoGenerate = 0
 let g:Lf_GtagsGutentags = 1
 
-let g:Lf_Gtagsconf = '<gtags_root_path>/share/gtags/gtags.conf'
+let g:Lf_Gtagsconf = '/usr/local/share/gtags/gtags.conf'
 let g:Lf_Gtagslabel = 'native-pygments'
 
 "let g:Lf_GtagsAutoGenerate = 1
@@ -551,16 +553,16 @@ noremap <leader>fw :LeaderfWindow<cr>
 noremap <leader>frr :LeaderfRgRecall<cr>
 
 " already auto map with plug
-"nmap <unique> <leader>fr <Plug>LeaderfRgPrompt
-"nmap <unique> <leader>fra <Plug>LeaderfRgCwordLiteralNoBoundary
-"nmap <unique> <leader>frb <Plug>LeaderfRgCwordLiteralBoundary
-"nmap <unique> <leader>frc <Plug>LeaderfRgCwordRegexNoBoundary
-"nmap <unique> <leader>frd <Plug>LeaderfRgCwordRegexBoundary
+nmap <unique> <leader>fr <Plug>LeaderfRgPrompt
+nmap <unique> <leader>fra <Plug>LeaderfRgCwordLiteralNoBoundary
+nmap <unique> <leader>frb <Plug>LeaderfRgCwordLiteralBoundary
+nmap <unique> <leader>frc <Plug>LeaderfRgCwordRegexNoBoundary
+nmap <unique> <leader>frd <Plug>LeaderfRgCwordRegexBoundary
 
-"vmap <unique> <leader>fra <Plug>LeaderfRgVisualLiteralNoBoundary
-"vmap <unique> <leader>frb <Plug>LeaderfRgVisualLiteralBoundary
-"vmap <unique> <leader>frc <Plug>LeaderfRgVisualRegexNoBoundary
-"vmap <unique> <leader>frd <Plug>LeaderfRgVisualRegexBoundary
+vmap <unique> <leader>fra <Plug>LeaderfRgVisualLiteralNoBoundary
+vmap <unique> <leader>frb <Plug>LeaderfRgVisualLiteralBoundary
+vmap <unique> <leader>frc <Plug>LeaderfRgVisualRegexNoBoundary
+vmap <unique> <leader>frd <Plug>LeaderfRgVisualRegexBoundary
 
 "nmap <unique> <leader>fgd <Plug>LeaderfGtagsDefinition
 "nmap <unique> <leader>fgr <Plug>LeaderfGtagsReference
@@ -657,13 +659,13 @@ ca HS Hi:save
 " let HiKeywords = '~/.config/keywords'
 
 " additional highlight colors
-" hi HiColor21 ctermfg=52  ctermbg=181 guifg=#8f5f5f guibg=#d7cfbf cterm=bold gui=bold
-" hi HiColor22 ctermfg=254 ctermbg=246 guifg=#e7efef guibg=#979797 cterm=bold gui=bold
+ hi HiColor21 ctermfg=52  ctermbg=181 guifg=#8f5f5f guibg=#d7cfbf cterm=bold gui=bold
+ hi HiColor22 ctermfg=254 ctermbg=246 guifg=#e7efef guibg=#979797 cterm=bold gui=bold
 
 " jump key mappings
-"nn n <Cmd>call HiSearch('n')<CR>
-"nn N <Cmd>call HiSearch('N')<CR>
-"nn <Esc>n <Cmd>noh<CR>
+nn n <Cmd>call HiSearch('n')<CR>
+nn N <Cmd>call HiSearch('N')<CR>
+nn <Esc>n <Cmd>noh<CR>
 
 " <Leader>f{char} to move to {char}
 map  <Leader>s <Plug>(easymotion-bd-f)
@@ -685,3 +687,10 @@ let g:copilot_node_path = '/home/ben7zy/.nvm/versions/node/v22.11.0/bin/node'  "
 let g:copilot_filetyps = ['c', 'cpp' ]
 
 set backspace=indent,eol,start
+
+let g:instant_markdown_port = 8090
+
+" need add bashrc
+"export BROWSER=true
+"export DISPLAY=
+

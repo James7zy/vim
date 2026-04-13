@@ -2280,7 +2280,16 @@ gem install redcarpet
 npm -g install instant-markdown-d
 ```
 注意，以上三条命令均要翻墙。
+如果是ssh到远端上去则需要将对应的端口映射到本地我用的是8090在.vimrc 中。
+```
+let g:instant_markdown_port = 8090
+```
 
+并且需要在.bashrc关闭自动打开浏览器
+```
+"export BROWSER=true
+"export DISPLAY=
+```
 对于重内容、轻设计的我这类人来说，markdown 简洁的文书语法太贴心了。推荐三个网站：
 
 * markdown 语法 http://daringfireball.net/projects/markdown/syntax
